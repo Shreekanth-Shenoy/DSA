@@ -121,6 +121,20 @@ Node* insertTail(Node* head, int val){
     return head;
 }
 
+Node* reverse(Node* head) {
+    Node* prev = nullptr;
+    Node* next = nullptr;
+
+    while (head) {
+        next = head->next;   // Save the next node
+        head->next = prev;   // Reverse the link
+        prev = head;         // Move prev one step forward
+        head = next;         // Move head one step forward
+    }
+
+    return prev;  // Update head to the new first node (previous last node)
+}
+
 
 int main(){
     Node* head = nullptr;
@@ -150,6 +164,7 @@ int main(){
     head = insertTail(head,9);
 
     display(head);
-
+    head = reverse(head);
+    display(head);
     return 0;
 }
