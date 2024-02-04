@@ -135,6 +135,24 @@ Node* reverse(Node* head) {
     return prev;  // Update head to the new first node (previous last node)
 }
 
+Node* deleteMiddle(Node* head) {
+    Node* slow = head;
+    Node* fast = head;
+    Node* prev = nullptr;
+
+    while (fast && fast->next && fast->next->next) {
+        fast = fast->next->next;
+        slow = slow->next;
+        prev = slow;
+    }
+
+    Node* toDelete = prev->next;
+    prev->next = prev->next->next;
+    delete toDelete;
+    return head;
+}
+
+
 
 int main(){
     Node* head = nullptr;
@@ -165,6 +183,12 @@ int main(){
 
     display(head);
     head = reverse(head);
+    display(head);
+    head = deleteMiddle(head);
+    display(head);
+    head = deleteMiddle(head);
+    display(head);
+    head = deleteMiddle(head);
     display(head);
     return 0;
 }
