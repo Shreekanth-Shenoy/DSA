@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bonus Calculator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Bonus Calculator</h1>
+        <form id="bonusForm" class="form">
+            <label for="bonus">Enter your Bonus Component:</label>
+            <input type="number" id="bonus" name="bonus" required>
+            
+            <label for="rating">Select your PDR rating:</label>
+            <select id="rating" name="rating" required>
+                <option value="">Select Rating</option>
+                <option value="1">Unsatisfactory</option>
+                <option value="2">Development needed</option>
+                <option value="3">Within Expectations</option>
+                <option value="4">Exceeding Expectations</option>
+                <option value="5">Outstanding Performance</option>
+            </select>
+
+            <button type="submit">Calculate Bonus</button>
+        </form>
+
+        <div id="bonusResult" class="result"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
